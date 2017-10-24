@@ -1,0 +1,18 @@
+[package]
+name = "rocket-test"
+version = "0.1.0"
+authors = ["Joseph Kordish <joe@unicornclouds.com>"]
+
+[dependencies]
+rocket         = "0.3"
+rocket_codegen = "0.3"
+reqwest        = "0.8"
+clippy         = {version="*", optional = true}
+
+[features]
+default=[]
+
+[profile.release]
+panic     = "abort"
+lto       = true
+opt-level = "s"
